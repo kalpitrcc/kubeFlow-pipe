@@ -4,7 +4,7 @@ from kfp import compiler
 from kfp import components
 
 EXPERIMENT_NAME = 'digit recognition note pipeline'        # Name of the experiment in the UI
-BASE_IMAGE = 'deopcard.corp.hkjc.com/ai-dsw-docker-snapshot-local/modeltraining:1.6'           
+BASE_IMAGE = '****/modeltraining:1.6'           
 VOLUME_NAME = "modeltraining-data"
 VOLUME_MOUNT_PATH = "/mnt/raw_data"
 
