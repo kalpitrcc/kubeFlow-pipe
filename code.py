@@ -95,3 +95,9 @@ kfp.Client().create_run_from_pipeline_func(
     training_pipeline, arguments={}, 
     experiment_name=EXPERIMENT_NAME
 )
+----
+
+
+data_loading_task = data_loading_op(data_path)
+                            .add_volume(k8s_client.V1Volume(name='data-processing')) \
+                            .add_volume_mount(k8s_client.V1VolumeMount(
