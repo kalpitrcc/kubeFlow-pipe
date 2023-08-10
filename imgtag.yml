@@ -1,0 +1,8 @@
+stage('Replace Image Tag') {
+    sh '''
+    yamlFile="serving.yaml"
+    modifiedYaml=$(cat "$yamlFile" | sed -E "s/(image:.*:)(\\w+)/\\1${IMAGE_TAG}/")
+    echo "$modifiedYaml" > "Deployment.yaml"
+    echo "Modified YAML: \n$modifiedYaml"
+    '''
+}
